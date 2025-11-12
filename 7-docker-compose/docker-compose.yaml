@@ -1,0 +1,15 @@
+version: "3"
+services:
+  pg:
+    image: postgres:14
+    restart: always
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - my-pg-network
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: db_name
